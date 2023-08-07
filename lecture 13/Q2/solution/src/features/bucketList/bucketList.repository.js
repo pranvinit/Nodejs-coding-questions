@@ -1,4 +1,3 @@
-// UserRepository.js
 import { getDB } from "../../config/mongodb.js";
 
 class BucketListRepository {

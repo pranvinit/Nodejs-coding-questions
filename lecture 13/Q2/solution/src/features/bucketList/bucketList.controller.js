@@ -1,7 +1,7 @@
 import BucketListModel from "./bucketList.model.js";
 import BucketListRepository from "./bucketList.repository.js";
 
-export default class UserController {
+export default class BucketListController {
   constructor() {
     this.bucketListRepository = new BucketListRepository();
   }

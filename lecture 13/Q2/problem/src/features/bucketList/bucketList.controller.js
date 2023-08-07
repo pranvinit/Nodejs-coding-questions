@@ -1,6 +1,6 @@
 import BucketListModel from "./bucketList.model.js";
 
-export default class UserController {
+export default class BucketListController {
   add = async (req, res) => {
     const { title, description, dateAdded, targetDate, isCompleted } = req.body;
     // Refactor to use the repository method
