@@ -9,6 +9,7 @@ export default class BucketListModel {
     this.isCompleted = isCompleted;
   }
 
+  // Move the below methods to the repository file
   static async addBucketListItem(
     title,
     description,
