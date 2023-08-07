@@ -15,5 +15,5 @@ export const connectToMongoDB = () => {
 };
 
 export const getDB = () => {
-  return client.db("confession");
+  return client.db("bucketListDB");
 };

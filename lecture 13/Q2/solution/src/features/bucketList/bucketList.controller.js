@@ -16,8 +16,10 @@ export default class UserController {
       isCompleted
     );
 
-    await this.bucketListRepository.addBucketListItem(itemToCreate);
-    res.status(201).send(itemToCreate);
+    const item = await this.bucketListRepository.addBucketListItem(
+      itemToCreate
+    );
+    res.status(201).send(item);
   };
 
   get = async (req, res) => {
