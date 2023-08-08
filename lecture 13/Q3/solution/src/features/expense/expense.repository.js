@@ -41,19 +41,18 @@ class ExpenseRepository {
   // Filter expenses based on date, amount, and isRecurring field
   async filterExpenses(criteria) {
     const db = getDB();
-    console.log(criteria);
     let query = {};
 
-    if (criteria.minAmount) {
-      query.amount = {
-        $gte: parseFloat(criteria.minAmount),
-      };
-    }
+    if (criteria.minAmount || criteria.maxAmount) {
+      query.amount = {};
 
-    if (criteria.maxAmount) {
-      query.amount = {
-        $lte: parseFloat(criteria.maxAmount),
-      };
+      if (criteria.minAmount) {
+        query.amount.$gte = parseFloat(criteria.minAmount);
+      }
+
+      if (criteria.maxAmount) {
+        query.amount.$lte = parseFloat(criteria.maxAmount);
+      }
     }
 
     if (criteria.isRecurring !== undefined) {
